@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="tab-pane" id="Registration">
+						<form role="form" class="form-horizontal" method="post" action="{% url 'register' %}">
+							{% csrf_token %}
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" placeholder="Name" type="text" name="fname">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" placeholder=" last Name" type="text" name="lname">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="email" name="email" placeholder="Email" type="email">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="mobile" name="mobile" placeholder="Mobile" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="password" name="password" placeholder="Password" type="password">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-10">
+									<input type="submit" class="btn btn-light btn-radius btn-brd grd1" value="submit">
+
+<!--									<button type="button" class="btn btn-light btn-radius btn-brd grd1">-->
+<!--										Cancel</button>-->
+								</div>
+							</div>
+						</form>
+					</div>
+{% endblock %}
