@@ -1,0 +1,683 @@
+{% load static %}
+{% block content %}
+<html>
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <!-- Site Metas -->
+    <title>St.Sebastine's HSS </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap-touch-slider.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/colors.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/pr_loading.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/timeline.min.css' %}">
+
+    <!-- Modernizer for Portfolio -->
+    <script src="{% static 'js/modernizer.js' %}"></script>
+
+	<script src="{% static 'js/all.js' %}"></script>
+
+    <script src="{% static 'js/01-custom-places-example.js' %}"></script>
+
+    <script src="{% static 'js/mapsed.js' %}"></script>
+
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <script src="{% static 'js/timeline.min.js' %}"></script>
+
+<!--    &lt;!&ndash;[if lt IE 9]>-->
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script class="jsbin" src="http:ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">  </script>
+
+<!--    <![endif]&ndash;&gt;-->
+
+</head>
+
+<body class="host_version">
+
+<!--	&lt;!&ndash; Modal &ndash;&gt;-->
+<!--	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+<!--	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">-->
+<!--		<div class="modal-content">-->
+<!--			<div class="modal-header tit-up">-->
+<!--				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>-->
+<!--				<h4 class="modal-title">Student Login</h4>-->
+<!--			</div>-->
+<!--			<div class="modal-body customer-box">-->
+<!--				&lt;!&ndash; Nav tabs &ndash;&gt;-->
+<!--				<ul class="nav nav-tabs">-->
+<!--					<li><a class="active" href="{% url 'login' %}" data-toggle="tab">Login</a></li>-->
+<!--					<li><a href="{% url 'register' %}" data-toggle="tab">Registration</a></li>-->
+<!--				</ul>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	  </div>-->
+<!--	</div>-->
+
+    <!-- LOADER -->
+	<div id="preloader">
+		<div class="loader-container">
+			<div class="progress-br float shadow">
+				<div class="progress__item"></div>
+			</div>
+		</div>
+	</div>
+	<!-- END LOADER -->
+
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">
+					<img src="{% static 'images/logo.png' %}" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-host">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+						<li class="nav-item"><a class="nav-link" href="{% url 'courses' %}">Courses</a></li>
+<!--						<li class="nav-item dropdown">-->
+<!--							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog </a>-->
+<!--							<div class="dropdown-menu" aria-labelledby="dropdown-a">-->
+<!--								<a class="dropdown-item" href="blog.html">Blog </a>-->
+<!--								<a class="dropdown-item" href="blog-single.html">Blog single </a>-->
+<!--							</div>-->
+<!--						</li>-->
+						<li class="nav-item"><a class="nav-link" href="{% url 'teachers' %}">Teachers</a></li>
+<!--						<li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>-->
+					 {% if user.is_authenticated %}
+
+                        <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"> {{user.fname}} </a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="{% url 'Sdetails' %}">Upload Details </a>
+								<a class="dropdown-item" href="{% url 'Sdisplay' %}">My Profile </a>
+                                <a class="dropdown-item" href="{% url 'leaveApply' %}">Apply Leave</a>
+                                <a class="dropdown-item" href="{% url 'leave' %}">View Leave</a>
+                                <a class="dropdown-item" href="{% url 'logout' %}">Logout </a>
+							</div>
+						</li>
+                        <li class="nav-item"><a class="nav-link" href="#"></a></li>
+                        {% else %}
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+                        <li><a class="hover-btn-new log" href="#" data-toggle="modal" data-target="#login"><span>REGISTER</span></a></li>
+                    </ul>
+                    {% endif %}
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+
+	<div class="all-title-box">
+		<div class="container text-center">
+			<h1>Student Info<span class="m_1">Complete details of the Student.</span></h1>
+		</div>
+	</div>
+	
+    <div id="contact" class="section wb">
+        <div class="container">
+            <div class="section-title text-center">
+                <!-- <h3>Need Help? Sure we are Online!</h3> -->
+<!-- <p class="lead">Let us give you more details about the special offer website you want us. Please fill out the form below. <br>We have million of website owners who happy to work with us!</p> -->
+            </div><!-- end title -->
+                                <script>
+                                function favCourse() {
+                                var stream = document.getElementById("Stream");
+                                document.getElementById("favourite").value = stream.options[mylist.selectedIndex].text;
+                                }
+                                </script>
+
+                                <script>
+                                function favsCourse() {
+                                var Slanguage = document.getElementById("slanguage");
+                                document.getElementById("favourite").value = stream.options[mylist.selectedIndex].text;
+                                }
+                                </script>
+
+           <script>
+             function validate()
+                {
+					var f=document.getElementById("fname").value;
+					var l=document.getElementById("lname").value;
+					var s=/^[a-zA-Z]+$/;
+					if(f=="")
+                {
+                    document.getElementById('fn').style.display = "block";
+
+                    document.getElementById('fn').innerHTML="**Please Enter  First Name";
+                    return false;
+                }
+					if(f!="" && s.test(f)==false){
+
+						document.getElementById('fn').style.display = "block";
+						document.getElementById('fn').innerHTML = "Invalid Fname";
+						return false;
+					}
+					else{
+						document.getElementById('fn').style.display = "none";
+					}
+					if(l=="")
+                {
+                    document.getElementById('ln').style.display = "block";
+
+                    document.getElementById('ln').innerHTML="**Please Enter  Last Name";
+                    return false;
+                }
+					if(l!="" && s.test(l)==false){
+
+						document.getElementById('ln').style.display = "block";
+						document.getElementById('ln').innerHTML = "Invalid Lname";
+						return false;
+					}
+					else{
+						document.getElementById('ln').style.display = "none";
+					}
+
+					var h=document.getElementById("hname").value;
+					var s=/^[a-zA-Z]+$/;
+					if(h=="")
+                {
+                    document.getElementById('hn').style.display = "block";
+
+                    document.getElementById('hn').innerHTML="**Please Enter  House Name";
+                    return false;
+                }
+					if(h!="" && s.test(h)==false){
+
+						document.getElementById('hn').style.display = "block";
+						document.getElementById('hn').innerHTML = "Invalid House name";
+						return false;
+					}
+					else{
+						document.getElementById('hn').style.display = "none";
+					}
+
+					var F=document.getElementById("father").value;
+					var s=/^[a-zA-Z]+$/;
+					if(F=="")
+                {
+                    document.getElementById('ft').style.display = "block";
+
+                    document.getElementById('ft').innerHTML="**Please Enter  father's Name";
+                    return false;
+                }
+					if(F!="" && s.test(F)==false){
+
+						document.getElementById('ft').style.display = "block";
+						document.getElementById('ft').innerHTML = "Invalid Father name";
+						return false;
+					}
+					else{
+						document.getElementById('ft').style.display = "none";
+					}
+
+					var O=document.getElementById("occupation").value;
+					var s=/^[a-zA-Z]+$/;
+					if(O=="")
+                {
+                    document.getElementById('oc').style.display = "block";
+
+                    document.getElementById('oc').innerHTML="**Please Enter  father's occupation";
+                    return false;
+                }
+					if(O!="" && s.test(O)==false){
+
+						document.getElementById('oc').style.display = "block";
+						document.getElementById('oc').innerHTML = "Invalid Father Occupation";
+						return false;
+					}
+					else{
+						document.getElementById('oc').style.display = "none";
+					}
+
+					var ph = document.getElementById("pmobile").value;
+					var expr = /^[6-9]\d{9}$/;
+					if(ph=="")
+                {
+                    document.getElementById('pmb').style.display = "block";
+
+                    document.getElementById('pmb').innerHTML="**Please Enter  Phone number";
+                    return false;
+                }
+					if(ph!="" && expr.test(ph)==false){
+						document.getElementById('pmb').style.display = "block";
+						document.getElementById('pmb').innerHTML = "Invalid Phone number";
+						return false;
+								}
+								else{
+						document.getElementById('pmb').style.display = "none";
+					}
+
+
+                    var age=document.getElementById("dob").value;
+                     if(age == "")
+                     {
+<!--                         document.getElementById('dob').placeholder="** please fill the field";-->
+                         document.getElementById('dob').style.border="1px solid red";
+                         document.getElementById('dob').focus();
+                         return false;
+                     }
+                       else if (!isDobValid(age))
+                     {
+                         alert("You must be 18 years old to register");
+                         document.getElementById('dob').style.border = "1px solid red";
+                         document.getElementById("dob").style.color = "red";
+                         return false;
+                     }
+
+
+
+
+					var C=document.getElementById("Caste").value;
+					var s=/^[a-zA-Z]+$/;
+					if(C=="")
+                {
+                    document.getElementById('cr').style.display = "block";
+
+                    document.getElementById('cr').innerHTML="**Please Enter  father's occupation";
+                    return false;
+                }
+					if(C!="" && s.test(C)==false){
+
+						document.getElementById('cr').style.display = "block";
+						document.getElementById('cr').innerHTML = "Invalid Father Occupation";
+						return false;
+					}
+					else{
+						document.getElementById('cr').style.display = "none";
+					}
+
+                    var P=document.getElementById("pschool").value;
+					var s=/^[a-zA-Z]+$/;
+					if(P=="")
+                {
+                    document.getElementById('ps').style.display = "block";
+
+                    document.getElementById('ps').innerHTML="**Please Enter  father's occupation";
+                    return false;
+                }
+					if(P!="" && s.test(P)==false){
+
+						document.getElementById('ps').style.display = "block";
+						document.getElementById('ps').innerHTML = "Invalid Father Occupation";
+						return false;
+					}
+					else{
+						document.getElementById('ps').style.display = "none";
+					}
+
+                    var GN=document.getElementById("gname").value;
+					var s=/^[a-zA-Z]+$/;
+					if(GN=="")
+                {
+                    document.getElementById('gn').style.display = "block";
+
+                    document.getElementById('gn').innerHTML="**Please Enter  Guardian Name";
+                    return false;
+                }
+					if(GN!="" && s.test(GN)==false){
+
+						document.getElementById('gn').style.display = "block";
+						document.getElementById('gn').innerHTML = "Invalid Guardian Name";
+						return false;
+					}
+					else{
+						document.getElementById('gn').style.display = "none";
+					}
+
+                    var gph = document.getElementById("gmobile").value;
+					var expr = /^[6-9]\d{9}$/;
+					if(gph=="")
+                {
+                    document.getElementById('gmb').style.display = "block";
+
+                    document.getElementById('gmb').innerHTML="**Please Enter  Phone number";
+                    return false;
+                }
+					if(gph!="" && expr.test(gph)==false)
+                    {
+						document.getElementById('gmb').style.display = "block";
+						document.getElementById('gmb').innerHTML = "Invalid Phone number";
+						return false;
+					}
+								else
+                                {
+						document.getElementById('gmb').style.display = "none";
+					        }
+                    
+                        
+                    
+            }
+
+         </script>
+
+
+            <script>
+                   const isDobValid = (dob) => {
+            // check age greater than 18
+            var today = new Date();
+            var birthDate = new Date(age);
+            var agee = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                agee--;
+            }
+            if (agee < 18) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+          </script>
+
+
+            <div class="row">
+                <div class="col-xl-12  col-md-12 col-sm-12">
+                  <div class="justify-content-centre align-items-centre d-flex">
+                      <div class="contact_form">
+                        <div id="message"></div>
+                        <form id="Sdetails" class="" action="{% url 'Sdetails' %}"  method="post" name="Sdetails">
+                            {% csrf_token %}
+                            <div class="row row-fluid">
+                                <div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>First Name </b> </label>
+                                    <input type="text" name="fname" id="fname" class="form-control" placeholder="First Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="fn" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Last Name </b> </label>
+                                    <input type="text" name="lname" id="lname" class="form-control" placeholder="Last Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="ln" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>House Name </b> </label>
+                                    <input type="text" name="hname" id="hname" class="form-control" placeholder="House Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="hn" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Father's Name </b> </label>
+                                    <input type="text" name="father" id="father" class="form-control" placeholder="Father Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="ft" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Father's Occupation </b> </label>
+                                    <input type="text" name="occupation" id="occupation" class="form-control" placeholder=" Father's Occupation" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="oc" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Parents Mobile number </b> </label>
+                                    <input type="text" name="pmobile" id="pmobile" class="form-control" placeholder="Parent's Mobile " onblur="return validate()" onKeyUp="return validate()" minlength="10" maxlength="10">
+                                    <span id="pmb" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Date of Birth </b> </label>
+                                    <input type="date" name="dob" id="dob" class="form-control" placeholder="Date of Birth" required onblur="return validate()" onkeyup="return validate()">
+                                    <span class="error" id="lblError"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Caste Religion </b> </label>
+                                    <input type="text" name="Caste" id="Caste" class="form-control" placeholder="Caste" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="cr" style="color: red;"></span>
+                                </div>
+
+<!--								<div class="col-lg-6 col-md-6 col-sm-6">-->
+<!--									<label><b>Nationality </b> </label>-->
+<!--                                    <input type="text" name="nationility" id="nationility" class="form-control" placeholder="Nationality">-->
+<!--                                </div>-->
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Previous School </b> </label>
+                                    <input type="text" name="pschool" id="pschool" class="form-control" placeholder="Previous School" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="ps" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>SSLC Percentage </b> </label>
+                                    <input type="number" name="mark" id="mark" class="form-control" placeholder="SSLC Percentage" required >
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6 mt-4" style="font-size: 20px;">
+                                    <label><b>Course </b> </label>
+                                    <select name="Course_name" style="height:55px; width:100%; border-radius:5px; text-align:center; color:#C1BCBC; text-size:25px;" id = "Course_name" onchange = "favCourse()" required >
+                                        <option> Choose Your Course </option>
+                                  {% for i in stream %}
+
+                                   <option value="{{i.Course_name}}">{{i.Course_name}} </option>
+                                  {% endfor %}
+
+                                   </select>
+<!--                                    <input type="text" name="Stream" id="Stream" class="form-control" placeholder="Course">-->
+                                </div>
+
+                                
+
+								<div class="col-lg-6 col-md-6 col-sm-6 mt-4" style="font-size: 20px;">
+									<label><b>Second language </b> </label>
+                                     <select name="slanguage" style="height:55px; width:100%; border-radius:5px; text-align:center; color:#C1BCBC; text-size:25px;" id = "slanguage" onchange = "favsCourse()" required >
+                                    <option> Choose Second lanaguage </option>
+                                    <option value="Malayalam"> Malayalam </option>
+                                    <option value="Hindi"> Hindi </option>
+
+                                    </select>
+<!--                                    <input type="text" name="slanguage" id="slanguage" class="form-control" placeholder="Second language">-->
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px; margin-top: 15px;" >
+									<label><b>Gender </b> </label><br>
+                                    <input type="radio" name="gender" id="gender" value="male" required>&nbsp;Male
+									<input type="radio" name="gender" id="gender" value="female" required>&nbsp;Female
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6 mt-5" style="font-size: 20px;" >
+									<label><b>Guardian's Name </b> </label>
+                                    <input type="text" name="gname" id="gname" class="form-control" placeholder="Guardian's Name" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="gn" style="color: red;"></span>
+                                </div>
+
+								<div class="col-lg-6 col-md-6 col-sm-6" style="font-size: 20px;">
+									<label><b>Guardian's Phone number </b> </label>
+                                    <input type="text" name="gmobile" id="gmobile" class="form-control" placeholder="Guardian's Phone number" onblur="return validate()" onKeyUp="return validate() " minlength="10" maxlength="10">
+                                    <span id="gmb" style="color: red;"></span>
+                                </div>
+
+								
+                                <!-- <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="email" name="email" id="email" class="form-control" placeholder="Your Email">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone">
+                                </div> -->
+                                <!-- <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <textarea class="form-control" name="comments" id="comments" rows="6" placeholder="Give us more details.."></textarea>
+                                </div> -->
+                                <br>
+
+<!--                                <div class="text-center pd">-->
+<!--                                    <input type="submit" value="UPLOAD" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">-->
+<!--                                </div>-->
+                              
+<!--                                 <div class="text-center pd">-->
+<!--                                    <input type="submit" value="CANCEL" id="cancel" class="btn btn-light btn-radius btn-brd grd1 btn-block">-->
+<!--                                </div>-->
+                            </div>
+                            <div>
+                                <div class="text-center pd">
+                                    <input type="submit" value="UPLOAD" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                  </div>
+                </div><!-- end col -->
+				<!-- <div class="col-xl-6 col-md-12 col-sm-12">
+					<div class="map-box">
+						<div id="custom-places" class="small-map"></div>
+					</div>
+				</div> -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+	
+	<div class="parallax section dbcolor">
+        <div class="container">
+            <div class="row logos">
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_01.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_02.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_03.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_04.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_05.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_06.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>About US</h3>
+                        </div>
+                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis dis montes.</p>
+                        <div class="footer-right">
+							<ul class="footer-links-soi">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-github"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul><!-- end links -->
+						</div>
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+
+				<div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Information Link</h3>
+                        </div>
+                        <ul class="footer-links">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Pricing</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Contact</a></li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="widget clearfix">
+                        <div class="widget-title">
+                            <h3>Contact Details</h3>
+                        </div>
+
+                        <ul class="footer-links">
+                            <li><a href="mailto:#">info@yoursite.com</a></li>
+                            <li><a href="#">www.yoursite.com</a></li>
+                            <li>PO Box 16122 Collins Street West Victoria 8007 Australia</li>
+                            <li>+61 3 8376 6284</li>
+                        </ul><!-- end links -->
+                    </div><!-- end clearfix -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </footer><!-- end footer -->
+
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-center">                   
+                    <p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">SmartEDU</a> Design By : <a href="https://html.design/">html design</a></p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/all.js' %}"></script>
+	<script src="{% static 'https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCKjLTXdq6Db3Xit_pW_GK4EXuPRtnod4o' %}"></script>
+	<!-- Mapsed JavaScript -->
+	<script src="{% static 'js/mapsed.js' %}"></script>
+	<script src="{% static 'js/01-custom-places-example.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>
+{% endblock %}

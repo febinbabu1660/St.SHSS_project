@@ -1,0 +1,1107 @@
+{% extends 'index/base.html' %}
+{% load static %}
+{% block content %}
+
+<!--	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+<!--	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">-->
+<!--		<div class="modal-content">-->
+<!--			<div class="modal-header tit-up">-->
+<!--				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+<!--				<h4 class="modal-title">Student Login</h4>-->
+<!--			</div>-->
+<!--			<div class="modal-body customer-box">-->
+<!--				&lt;!&ndash; Nav tabs &ndash;&gt;-->
+<!--				<ul class="nav nav-tabs">-->
+<!--					<li><a class="active" href="#" data-toggle="tab">Login</a></li>-->
+<!--					<li><a href="#" data-toggle="tab">Registration</a></li>-->
+<!--				</ul>-->
+<!--				&lt;!&ndash; Tab panes &ndash;&gt;-->
+<!--				<div class="tab-content">-->
+<!--					<div class="tab-pane active" id="Login">-->
+
+<body>
+
+	<!-- Modal -->
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header tit-up">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<!--				<h4 class="modal-title">Student Login</h4>-->
+			</div>
+			<div class="modal-body customer-box">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs">
+					<li><a class="active" href="#Login" data-toggle="tab">Login</a></li>
+					<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+				</ul>
+				<!-- Tab panes -->
+                <script>
+
+                 function validate1()
+                {
+                var emil=document.getElementById("email").value;
+					var st=/^[\w\+\'\.-]+@[\w\'\.-]+\.[a-zA-Z]{2,}$/;
+					if(emil=="")
+                {
+                    document.getElementById('el').style.display = "block";
+
+                    document.getElementById('el').innerHTML="**Please Enter  Email";
+                    return false;
+                }
+					if(emil!="" && st.test(emil)==false){
+
+						document.getElementById('el2').style.display = "block";
+						document.getElementById('el2').innerHTML = "Invalid Email id";
+						return false;
+					}
+					else{
+						document.getElementById('el2').style.display = "none";
+					}
+                }
+
+</script>
+
+
+
+
+<style>
+<!--input {-->
+<!--  width: 100%;-->
+<!--  padding: 12px;-->
+<!--  border: 1px solid #ccc;-->
+<!--  border-radius: 4px;-->
+<!--  box-sizing: border-box;-->
+<!--  margin-top: 6px;-->
+<!--  margin-bottom: 16px;-->
+<!--}-->
+
+<!--/* Style the submit button */-->
+<!--input[type=submit] {-->
+<!--  background-color: #04AA6D;-->
+<!--  color: white;-->
+<!--}-->
+
+<!--/* Style the container for inputs */-->
+<!--.container {-->
+<!--  background-color: #f1f1f1;-->
+<!--  padding: 20px;-->
+<!--}-->
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+</style>
+
+
+    <script>
+
+     var psword=document.getElementById('password').value;
+
+    {
+
+                   if(psword=="")
+                {
+                    document.getElementById('pswd').style.display = "block";
+
+                    document.getElementById('pswd').innerHTML="**please enter  Password";
+                    return false;
+                }
+                else
+                {
+						document.getElementById('pswd').style.display = "none";
+					}
+
+
+
+
+var myInput = document.getElementById("password");
+var letter = document.getElementById("letter1");
+var capital = document.getElementById("capital1");
+var number = document.getElementById("number1");
+var length = document.getElementById("length1");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function1() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function1() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function1() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="Login">
+						<form role="form" class="form-horizontal" method="post" action="{% url 'login' %}">
+							{% csrf_token %}
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" name="email" id="email" placeholder="Email" type="email" onblur="return validate1()" onKeyUp="return validate1()" required>
+                                    <span id="el2" style="color: red;"></span>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" name="password" id="password" placeholder="password" type="password"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+								    <span id="pswd" style="color: red;"></span>
+
+                                </div>
+<!--                                  <div id="message1">-->
+<!--                                      <h3>Password must contain the following:</h3>-->
+<!--                                      <p id="letter1" class="invalid">A <b>lowercase</b> letter</p>-->
+<!--                                      <p id="capital1" class="invalid">A <b>capital (uppercase)</b> letter</p>-->
+<!--                                      <p id="number1" class="invalid">A <b>number</b></p>-->
+<!--                                      <p id="length1" class="invalid">Minimum <b>8 characters</b></p>-->
+<!--                                </div>-->
+							</div>
+							<div class="row">
+								<div class="col-sm-10">
+									<input type="submit" class="btn btn-light btn-radius btn-brd grd1" value="login">
+
+									<a class="for-pwd" href="javascript:;">Forgot your password?</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane" id="Registration">
+
+                       <script>
+                 function validate()
+                {
+					var f=document.getElementById("fname").value;
+					var l=document.getElementById("lname").value;
+					var s=/^[a-zA-Z]+$/;
+					if(f=="")
+                {
+                    document.getElementById('fn').style.display = "block";
+
+                    document.getElementById('fn').innerHTML="**Please Enter  First Name";
+                    return false;
+                }
+					if(f!="" && s.test(f)==false){
+
+						document.getElementById('fn').style.display = "block";
+						document.getElementById('fn').innerHTML = "Invalid Fname";
+						return false;
+					}
+					else{
+						document.getElementById('fn').style.display = "none";
+					}
+					if(l=="")
+                {
+                    document.getElementById('ln').style.display = "block";
+
+                    document.getElementById('ln').innerHTML="**Please Enter  Last Name";
+                    return false;
+                }
+					if(l!="" && s.test(l)==false){
+
+						document.getElementById('ln').style.display = "block";
+						document.getElementById('ln').innerHTML = "Invalid Lname";
+						return false;
+					}
+					else{
+						document.getElementById('ln').style.display = "none";
+					}
+
+					var a=document.getElementById("email1").value;
+					var st=/^[\w\+\'\.-]+@[\w\'\.-]+\.[a-zA-Z]{2,}$/;
+					if(e=="")
+                {
+                    document.getElementById('el').style.display = "block";
+
+                    document.getElementById('el').innerHTML="**Please Enter  Email";
+                    return false;
+                }
+					if(a!="" && st.test(a)==false){
+
+						document.getElementById('el').style.display = "block";
+						document.getElementById('el').innerHTML = "Invalid Email id";
+						return false;
+					}
+					else{
+						document.getElementById('el').style.display = "none";
+					}
+
+					var m = document.getElementById("mobile").value;
+					var expr = /^[6-9]\d{9}$/;
+					if(m=="")
+                {
+                    document.getElementById('pe').style.display = "block";
+
+                    document.getElementById('pe').innerHTML="**Please Enter  Phone number";
+                    return false;
+                }
+					if(m!="" && expr.test(m)==false){
+						document.getElementById('pe').style.display = "block";
+						document.getElementById('pe').innerHTML = "Invalid Phone number";
+						return false;
+								}
+								else{
+						document.getElementById('pe').style.display = "none";
+					}
+					 var d=document.getElementById('password1').value;
+
+                     var e=document.getElementById('cpassword').value;
+<!--                     if(d=="")-->
+<!--                {-->
+<!--                    document.getElementById('pss').style.display = "block";-->
+
+<!--                    document.getElementById('pss').innerHTML="**Please Enter  Password";-->
+<!--                    return false;-->
+<!--                }-->
+                   if(d=="")
+                {
+                    document.getElementById('pss').style.display = "block";
+
+                    document.getElementById('pss').innerHTML="**please enter  Password";
+                    return false;
+                }
+                else{
+						document.getElementById('pss').style.display = "none";
+					}
+<!--					if(e=="")-->
+<!--                {-->
+<!--                    document.getElementById('cpss').style.display = "block";-->
+
+<!--                    document.getElementById('cpss').innerHTML="**Please Enter  password";-->
+<!--                    return false;-->
+<!--                }-->
+                if(e=="")
+                {
+                    document.getElementById('cpass').style.display = "block";
+
+                    document.getElementById('cpss').innerHTML="**please enter Confirm Password";
+                    return false;
+                }
+
+                if(d!=e)
+                {
+                    document.getElementById('cpss').style.display = "block";
+
+                    document.getElementById('cpss').innerHTML="**Incorrect Password";
+                    return false;
+                }
+                        else
+                          {
+                          	document.getElementById('cpss').style.display = "none";
+
+                    return true;
+                }
+
+
+				}
+                </script>
+
+
+                        <script>
+                                function favrole() {
+                                var role = document.getElementById("role");
+                                document.getElementById("role").value = role.options[mylist.selectedIndex].text;
+                                }
+                        </script>
+
+
+
+						<form role="form" class="form-horizontal" method="post" action="{% url 'register' %}">
+							{% csrf_token %}
+                            <div class="row row-fluid">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" placeholder="First Name" type="text" name="fname" id="fname" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="fn" style="color: red;"></span>
+
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" placeholder=" Last Name" type="text" name="lname" id="lname" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="ln" style="color: red;"></span>
+
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="email1" name="email" placeholder="Email" type="email" onblur="return validate()" onKeyUp="return validate()">
+                                    <span id="el" style="color: red;"></span>
+
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-12">
+									<input class="form-control" id="mobile" name="mobile" placeholder="Mobile" type="text" onblur="return validate()" onKeyUp="return validate()" minlength="10" maxlength="10">
+                                    <span id="pe" style="color: red;"></span>
+
+								</div>
+							</div>
+
+
+
+
+
+							<div class="form-group">
+								<div class="col-sm-12">
+                                   
+<!--									<input class="form-control" id="password1" name="password" placeholder="Password" type="password">-->
+<!--                                    <input type="password" class="form-control" id="password1" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>-->
+                                    <input type="password" class="form-control"  id="psw" name="psw" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                    <span id="pss" style="color: red;"></span>
+
+
+
+								</div>
+
+
+
+                                <div id="message">
+                                      <h3>Password must contain the following:</h3>
+                                      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                      <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                      <p id="number" class="invalid">A <b>number</b></p>
+                                      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                                </div>
+
+
+
+							</div>
+<!--                            <div class="form-group">-->
+<!--								<div class="col-sm-12">-->
+<!--									<input class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" type="password" onblur="return validate()" onKeyUp="return validate()">-->
+<!--                                    <span id="cpss" style="color: red;"></span>-->
+<!--								</div>-->
+<!--							</div>-->
+
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+
+                                  <select name="role" style="height:55px; width:100%; border-radius:5px; text-align:center; color:#C1BCBC; text-size:25px;" id = "role" onchange = "favrole()" required >
+                                        <option> REGISTER AS </option>
+                                        <option value="Student">Student </option>
+                                        <option value="Teacher">Teacher </option>
+
+                                  </select>
+<!--                                  <input type="text" name="Stream" id="Stream" class="form-control" placeholder="Course">-->
+                                </div>
+                            </div>
+
+							<div class="row">
+								<div class="col-sm-10">
+									<input type="submit" class="btn btn-light btn-radius btn-brd grd1" value="submit">
+                                    <button type="button" class="btn btn-light btn-radius btn-brd grd1">
+										Cancel</button>
+
+								</div>
+							</div>
+						</form>                   
+					</div>                 
+				</div>            
+			</div>
+		</div>
+	  </div>
+	</div>
+
+<style>
+<!--input {-->
+<!--  width: 100%;-->
+<!--  padding: 12px;-->
+<!--  border: 1px solid #ccc;-->
+<!--  border-radius: 4px;-->
+<!--  box-sizing: border-box;-->
+<!--  margin-top: 6px;-->
+<!--  margin-bottom: 16px;-->
+<!--}-->
+
+<!--/* Style the submit button */-->
+<!--input[type=submit] {-->
+<!--  background-color: #04AA6D;-->
+<!--  color: white;-->
+<!--}-->
+
+<!--/* Style the container for inputs */-->
+<!--.container {-->
+<!--  background-color: #f1f1f1;-->
+<!--  padding: 20px;-->
+<!--}-->
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+</style>
+
+
+    <script>
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+</script>
+
+  
+
+	<div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" data-pause="hover" data-interval="false" >
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleControls" data-slide-to="1"></li>
+			<li data-target="#carouselExampleControls" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="carousel-item active">
+				<div id="home" class="first-section" style="background-image:url('{% static 'images/class3.jpeg' %}');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-right">
+									<div class="big-tagline">
+										<h2><strong>St.Sebastian's  </strong> Higher Secondary School </h2>
+										<p class="lead">Lead towards the kindly Light of New World </p>
+											<a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" class="hover-btn-new"><span>Read More</span></a>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
+			</div>
+			<div class="carousel-item">
+				<div id="home" class="first-section" style="background-image:url('{% static 'images/school1.jpeg' %}');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-left">
+									<div class="big-tagline">
+										<h2 data-animation="animated zoomInRight">St.Sebastian's  <strong> Higher Secondary School</strong></h2>
+										<p class="lead" data-animation="animated fadeInLeft">Lead towards the kindly Light of New World </p>
+											<a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" class="hover-btn-new"><span>Read More</span></a>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
+			</div>
+			<div class="carousel-item">
+				<div id="home" class="first-section" style="background-image:url('{% static 'images/school2.jpeg' %}');">
+					<div class="dtab">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 text-center">
+									<div class="big-tagline">
+										<h2 data-animation="animated zoomInRight"><strong>St.Sebastian's </strong> Higher Secondary School</h2>
+										<p class="lead" data-animation="animated fadeInLeft">Lead towards the kindly Light of New World </p>
+											<a href="#" class="hover-btn-new"><span>Contact Us</span></a>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="#" class="hover-btn-new"><span>Read More</span></a>
+									</div>
+								</div>
+							</div><!-- end row -->            
+						</div><!-- end container -->
+					</div>
+				</div><!-- end section -->
+			</div>
+			<!-- Left Control -->
+			<a class="new-effect carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="fa fa-angle-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+
+			<!-- Right Control -->
+			<a class="new-effect carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				<span class="fa fa-angle-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	
+    <div id="overviews" class="section wb">
+        <div class="container">
+            <div class="section-title row text-center">
+                <div class="col-md-8 offset-md-2">
+                    <h3>About</h3>
+                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+                </div>
+            </div><!-- end title -->
+        
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h4>2018 BEST SmartEDU education school</h4>
+                        <h2>Welcome to SmartEDU education school</h2>
+                        <p>Quisque eget nisl id nulla sagittis auctor quis id. Aliquam quis vehicula enim, non aliquam risus. Sed a tellus quis mi rhoncus dignissim.</p>
+
+                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum. Sed fermentum est vitae rhoncus molestie. Cum sociis natoque penatibus et magnis montes, nascetur ridiculus mus. Sed vitae rutrum neque. </p>
+
+                        <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+				
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="{% static 'images/about_02.jpg' %}" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+			</div>
+			<div class="row align-items-center">
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="post-media wow fadeIn">
+                        <img src="{% static 'images/about_03.jpg' %}" alt="" class="img-fluid img-rounded">
+                    </div><!-- end media -->
+                </div><!-- end col -->
+				
+				<div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <div class="message-box">
+                        <h2>The standard Lorem Ipsum passage, used since the 1500s</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        <p> Integer rutrum ligula eu dignissim laoreet. Pellentesque venenatis nibh sed tellus faucibus bibendum.</p>
+
+                        <a href="#" class="hover-btn-new orange"><span>Learn More</span></a>
+                    </div><!-- end messagebox -->
+                </div><!-- end col -->
+				
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+<!--    <section class="section lb page-section">-->
+<!--		<div class="container">-->
+<!--			 <div class="section-title row text-center">-->
+<!--                <div class="col-md-8 offset-md-2">-->
+<!--                    <h3>Our history</h3>-->
+<!--                    <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>-->
+<!--                </div>-->
+<!--            </div>&lt;!&ndash; end title &ndash;&gt;-->
+<!--			<div class="timeline">-->
+<!--				<div class="timeline__wrap">-->
+<!--					<div class="timeline__items">-->
+<!--						<div class="timeline__item">-->
+<!--							<div class="timeline__content img-bg-01">-->
+<!--								<h2>2018</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem-->
+<!--									ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="timeline__item">-->
+<!--							<div class="timeline__content img-bg-02">-->
+<!--								<h2>2015</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem-->
+<!--									ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="timeline__item">-->
+<!--							<div class="timeline__content img-bg-03">-->
+<!--								<h2>2014</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem-->
+<!--									ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="timeline__item">-->
+<!--							<div class="timeline__content img-bg-04">-->
+<!--								<h2>2012</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem-->
+<!--									ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="timeline__item">-->
+<!--							<div class="timeline__content img-bg-01">-->
+<!--								<h2>2010</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem-->
+<!--									ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="timeline__item">-->
+<!--							<div class="timeline__content img-bg-02">-->
+<!--								<h2>2007</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem-->
+<!--									ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="timeline__item">-->
+<!--							<div class="timeline__content img-bg-03">-->
+<!--								<h2>2004</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem-->
+<!--									ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="timeline__item">-->
+<!--							<div class="timeline__content img-bg-04">-->
+<!--								<h2>2002</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum lacus dapibus. Lorem-->
+<!--									ipsum dolor sit amet, consectetur adipiscing elit.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</section>-->
+
+	<div class="section cl">
+		<div class="container">
+			<div class="row text-left stat-wrap">
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-study"></i></span>
+					<p class="stat_count">12000</p>
+					<h3>Students</h3>
+				</div><!-- end col -->
+
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-online"></i></span>
+					<p class="stat_count">240</p>
+					<h3>Courses</h3>
+				</div><!-- end col -->
+
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<span data-scroll class="global-radius icon_wrap effect-1 alignleft"><i class="flaticon-years"></i></span>
+					<p class="stat_count">55</p>
+					<h3>Years Completed</h3>
+				</div><!-- end col -->
+			</div><!-- end row -->
+		</div><!-- end container -->
+	</div><!-- end section -->
+
+    <div id="plan" class="section lb">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>Choose Your Plan</h3>
+                <p>Lorem ipsum dolor sit aet, consectetur adipisicing lit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div><!-- end title -->
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="message-box">
+                        <ul class="nav nav-pills nav-stacked" id="myTabs">
+                            <li><a class="active" href="#tab1" data-toggle="pill">Monthly Subscription</a></li>
+                            <li><a href="#tab2" data-toggle="pill">Yearly Subscription</a></li>
+                        </ul>
+                    </div>
+                </div><!-- end col -->
+            </div>
+
+            <hr class="invis">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active fade show" id="tab1">
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$45</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$59</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$85</h2>
+                                            <h3>per month</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end row -->
+                        </div><!-- end pane -->
+
+                        <div class="tab-pane fade" id="tab2">
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$477</h2>
+                                            <h3>Year</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$485</h2>
+                                            <h3>Year</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="pricing-table pricing-table-highlighted">
+                                        <div class="pricing-table-header grd1">
+                                            <h2>$500</h2>
+                                            <h3>Year</h3>
+                                        </div>
+                                        <div class="pricing-table-space"></div>
+                                        <div class="pricing-table-features">
+                                            <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                            <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                            <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                            <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                            <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                        </div>
+                                        <div class="pricing-table-sign-up">
+                                            <a href="#" class="hover-btn-new orange"><span>Order Now</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end row -->
+                        </div><!-- end pane -->
+                    </div><!-- end content -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <div id="testimonials" class="parallax section db parallax-off" style="background-image:url('{% static 'images/parallax_04.jpg' %}');">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>Testimonials</h3>
+                <p>Lorem ipsum dolor sit aet, consectetur adipisicing lit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </div><!-- end title -->
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="testi-carousel owl-carousel owl-theme">
+                        <div class="testimonial clearfix">
+							<div class="testi-meta">
+                                <img src="{% static 'images/testi_01.png' %}" alt="" class="img-fluid">
+                                <h4>James Fernando </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
+                                <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+							<div class="testi-meta">
+                                <img src="{% static 'images/testi_02.png' %}" alt="" class="img-fluid">
+                                <h4>Jacques Philips </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
+                                <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+							<div class="testi-meta">
+                                <img src="{% static 'images/testi_03.png' %}" alt="" class="img-fluid ">
+                                <h4>Venanda Mercy </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
+                                <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+                        <div class="testimonial clearfix">
+							<div class="testi-meta">
+                                <img src="{% static 'images/testi_01.png' %}" alt="" class="img-fluid">
+                                <h4>James Fernando </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
+                                <p class="lead">They have got my project on time with the competition with a sed highly skilled, and experienced & professional team.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+							<div class="testi-meta">
+                                <img src="{% static 'images/testi_02.png' %}" alt="" class="img-fluid">
+                                <h4>Jacques Philips </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Awesome Services!</h3>
+                                <p class="lead">Explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you completed.</p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div>
+                        <!-- end testimonial -->
+
+                        <div class="testimonial clearfix">
+							<div class="testi-meta">
+                                <img src="{% static 'images/testi_03.png' %}" alt="" class="img-fluid">
+                                <h4>Venanda Mercy </h4>
+                            </div>
+                            <div class="desc">
+                                <h3><i class="fa fa-quote-left"></i> Great & Talented Team!</h3>
+                                <p class="lead">The master-builder of human happines no one rejects, dislikes avoids pleasure itself, because it is very pursue pleasure. </p>
+                            </div>
+                            <!-- end testi-meta -->
+                        </div><!-- end testimonial -->
+                    </div><!-- end carousel -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+    <div class="parallax section dbcolor">
+        <div class="container">
+            <div class="row logos">
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_01.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_02.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_03.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_04.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_05.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
+                    <a href="#"><img src="{% static 'images/logo_06.png' %}" alt="" class="img-repsonsive"></a>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end section -->
+{% endblock %}
